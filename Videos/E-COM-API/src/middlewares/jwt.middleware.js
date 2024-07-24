@@ -1,24 +1,26 @@
-const jwtAuth = (req, res, next) => {
+import jwt from 'jsonwebtoken';
+const jwtAuth = (req, res, next)=>{
     // 1. Read the token.
-    console.log(req.headers);
     const token = req.headers['authorization'];
-    //2. if no token, return the error.
-    if (!token) {
+
+    // 2. if no token, return the error.
+    if(!token){
         return res.status(401).send('Unauthorized');
     }
     // 3. check if token is valid.
-    try {
+    try{
         const payload = jwt.verify(
             token,
-            'juNRxsh5J1ojign5jhzXH6Spmzqmfa59',
+            "AIb6d35fvJM4O9pXqXQNla2jBCH9kuLz"
         );
         req.userID = payload.userID;
         console.log(payload);
-    }
-    catch(err){
+    } catch(err){
         // 4. return error.
+        console.log(err);
         return res.status(401).send('Unauthorized');
     }
+
     // 5. call next middleware.
     next();
 };
