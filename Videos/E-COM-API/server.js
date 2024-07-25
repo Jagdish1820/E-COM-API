@@ -17,6 +17,7 @@ const server = express();
 var corsOptions = {
   origin: "http://localhost:5500"
 }
+
 server.use(cors(corsOptions));
 
 // server.use((req, res, next)=>{
