@@ -20,19 +20,27 @@ export default class ProductController {
     res.status(201).send(createdRecord);
   }
 
-  rateProduct(req, res) {
-    const userID = req.query.userID;
-    const productID = req.query.productID;
-    const rating = req.query.rating;
-    ProductModel.rateProduct(
-      userID,
-      productID, 
-      rating
-      );
-      return res
-        .status(200)
-        .send('Rating has been added');
-  }
+  rateProduct(req, res, next) {
+    console.log(req.query);
+    try{
+      const userID = req.query.userID;
+      const productID = req.query.productID;
+      const rating = req.query.rating;
+      ProductModel.rateProduct(
+        userID,
+        productID, 
+        rating
+        );
+        return res
+          .status(200)
+          .send('Rating has been added');
+    } catch(err){
+      console.log("Passing error to middleware");
+      next(err);
+    }
+
+    }
+   
 
   getOneProduct(req, res) {
     const id = req.params.id;
