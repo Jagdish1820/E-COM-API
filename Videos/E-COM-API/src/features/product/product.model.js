@@ -56,6 +56,7 @@ export default class ProductModel {
       (u) => u.id == userID
     );
     if(!user){
+      // user-defined error.
       throw new Error("User not found"); 
     }
 
