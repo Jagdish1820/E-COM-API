@@ -10,6 +10,7 @@ import cartRouter from './src/features/cartItems/cartItems.routes.js';
 import apiDocs from './swagger.json' assert {type: 'json'};
 import loggerMiddleware from './src/middlewares/logger.middleware.js';
 import { ApplicationError } from './src/error-handler/applicationError.js';
+import {connectToMongoDB} from './src/config/mongodb.js';
 // 2. Create Server
 const server = express();
 
@@ -58,14 +59,14 @@ server.get('/', (req, res) => {
 // Error handler middleware
 server.use((err, req, res, next)=>{
   console.log(err);
-  if(err instanceof ApplicationError){
+  if (err instanceof ApplicationError){
     res.status(err.code).send(err.message);
   }
 
-  // server error
-  res.
-  status(500).
-  send(
+  // server errors.
+  res
+  .status(500)
+  .send(
     'Something went wrong, please try later'
     );
 });
@@ -77,6 +78,9 @@ server.use((req, res)=>{
 
 
 // 5. Specify port.
-server.listen(3200);
+server.listen(3200, ()=>{
+  console.log('Server is running at 3200');
+  connectToMongoDB();
 
-console.log('Server is running at 3200');
+});
+
