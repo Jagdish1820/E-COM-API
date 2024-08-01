@@ -51,7 +51,7 @@ server.use(loggerMiddleware);
 
 server.use(
   '/api/products',
-  jwtAuth,
+
   productRouter
 );
 server.use("/api/cartItems", jwtAuth, cartRouter);
