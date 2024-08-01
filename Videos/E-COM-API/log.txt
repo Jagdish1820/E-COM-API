@@ -102,3 +102,16 @@
  Thu Aug 01 2024 18:49:36 GMT+0530 (India Standard Time) - /api/products/rate - {"productID":"66ab19905ec63bed5d504405","rating":3.5}
  Thu Aug 01 2024 18:50:11 GMT+0530 (India Standard Time) - /api/products/rate - {"productID":"66ab19905ec63bed5d504405","rating":3.7}
  Thu Aug 01 2024 18:51:09 GMT+0530 (India Standard Time) - /api/products/rate - {"productID":"66ab19365ec63bed5d504404","rating":4.4}
+ Thu Aug 01 2024 21:57:26 GMT+0530 (India Standard Time) - /api/cartitems - {"productID":"66ab19365ec63bed5d504404","quantity":2}
+ Thu Aug 01 2024 21:57:47 GMT+0530 (India Standard Time) - /api/cartitems - {"productID":"66ab19365ec63bed5d504404","quantity":2}
+ Thu Aug 01 2024 21:58:17 GMT+0530 (India Standard Time) - /api/cartitems - {"productID":"66ab19365ec63bed5d504404","quantity":2}
+ Thu Aug 01 2024 21:58:19 GMT+0530 (India Standard Time) - /api/cartitems - {"productID":"66ab19365ec63bed5d504404","quantity":2}
+ Thu Aug 01 2024 21:58:42 GMT+0530 (India Standard Time) - /api/cartitems - {"productID":"66ab19a05ec63bed5d504406","quantity":2}
+ Thu Aug 01 2024 21:59:43 GMT+0530 (India Standard Time) - /api/cartitems - {"productID":"66ab19a05ec63bed5d504406","quantity":3}
+ Thu Aug 01 2024 22:00:00 GMT+0530 (India Standard Time) - /api/cartitems/66ab19a05ec63bed5d504406 - {"productID":"66ab19a05ec63bed5d504406","quantity":3}
+ Thu Aug 01 2024 22:00:05 GMT+0530 (India Standard Time) - /api/cartitems/66ab19a05ec63bed5d504406 - {"productID":"66ab19a05ec63bed5d504406","quantity":3}
+ Thu Aug 01 2024 22:00:12 GMT+0530 (India Standard Time) - /api/cartitems/66ab19a05ec63bed5d504406 - {}
+ Thu Aug 01 2024 22:01:06 GMT+0530 (India Standard Time) - /api/cartitems - {}
+ Thu Aug 01 2024 22:01:22 GMT+0530 (India Standard Time) - /api/cartitems/66abb7f7a516716f007bc605 - {}
+ Thu Aug 01 2024 22:01:36 GMT+0530 (India Standard Time) - /api/cartitems/66abb7f7a516716f007bc605 - {}
+ Thu Aug 01 2024 22:01:47 GMT+0530 (India Standard Time) - /api/cartitems/ - {}
