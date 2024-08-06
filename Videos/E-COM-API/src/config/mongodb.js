@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const url = process.env.DB_URL;
+console.log("URL: "+url);
 
 let client;
 export const connectToMongoDB = ()=>{
@@ -18,6 +19,10 @@ export const connectToMongoDB = ()=>{
         .catch(err=>{
             console.log(err);
         })
+}
+
+export const getClient = ()=>{
+    return client;
 }
 
 export const getDB = ()=>{
@@ -35,9 +40,9 @@ const createIndexes = async(db)=>{
     try{
         await db.collection("products").createIndex({price:1});
         await db.collection("products").createIndex({name:1, category:-1});
-        await db.collection("products").createIndex({desc: "text"});
+        await db.collection("products").createIndex({desc:"text"});
     }catch(err){
         console.log(err);
     }
     console.log("Indexes are created");
-    }
+}

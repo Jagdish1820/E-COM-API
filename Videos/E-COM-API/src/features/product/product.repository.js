@@ -132,7 +132,7 @@ async averageProductPricePerCategory(){
         return await db.collection(this.collection)
             .aggregate([
                 {
-                    // Stage 1: Get Vaerge price per category
+                    // Stage 1: Get Average price per category
                     $group:{
                         _id:"$category",
                         averagePrice:{$avg:"$price"}

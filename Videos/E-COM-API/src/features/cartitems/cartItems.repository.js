@@ -13,7 +13,6 @@ export default class CartItemsRepository{
             const db = getDB();
             const collection = db.collection(this.collection)
             const id = await this.getNextCounter(db);
-            console.log("id:",id);
             // find the document
             // either insert or update
             // Insertion.
@@ -62,7 +61,7 @@ export default class CartItemsRepository{
             {$inc:{value: 1}},
             {returnDocument:'after'}
         )  
-        console.log("resultDocument:",resultDocument);
+        console.log(resultDocument);
         return resultDocument.value.value;
     }
 }
