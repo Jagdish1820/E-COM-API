@@ -95,5 +95,5 @@ server.listen(3200, ()=>{
   console.log('Server is running at 3200');
   // connectToMongoDB();
   connectUsingMongoose();
-}); 
+});
 
