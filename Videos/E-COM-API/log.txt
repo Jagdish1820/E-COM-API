@@ -345,5 +345,19 @@
  Thu Aug 31 2023 15:31:27 GMT+0530 (India Standard Time) - /api/users/signup - {"email":"dheeraj.sk2@gmail.com","password":"Password1@"}
  Thu Aug 31 2023 15:31:39 GMT+0530 (India Standard Time) - /api/users/signup - {"email":"dheeraj.sk2@gmail.com","password":"Password1@"}
  Thu Aug 31 2023 15:33:35 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"John Doe","email":"john.doe@gmail.com","password":"Password1@"}
- Tue Oct 03 2023 00:54:58 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"John Doe","email":"john.doe@gmail.com","password":"Password1@"}
- Wed Aug 07 2024 02:09:55 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"huddajk20@gmail.com","password":"Password"}
+ Thu Aug 31 2023 17:18:02 GMT+0530 (India Standard Time) - /api/user/resetPassword - {"newPassword":"jon@123"}
+ Thu Aug 31 2023 17:18:37 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jon@123"}
+ Thu Aug 31 2023 17:20:18 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jon@123"}
+ Thu Aug 31 2023 17:21:31 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jon@123"}
+ Thu Aug 31 2023 17:22:01 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jon@123"}
+ Thu Aug 31 2023 17:24:01 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jon@123"}
+ Thu Aug 31 2023 17:25:40 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jon@123"}
+ Wed Aug 07 2024 02:36:23 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"password":"jagdish@123"}
+ Wed Aug 07 2024 02:37:37 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"password":"jagdish@123"}
+ Wed Aug 07 2024 02:40:05 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"password":"jagdish@123"}
+ Wed Aug 07 2024 02:40:39 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jagdish@123"}
+ Wed Aug 07 2024 02:41:00 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jagdish@123"}
+ Wed Aug 07 2024 02:41:07 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"jagdish@1234"}
+ Wed Aug 07 2024 02:41:32 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"1234"}
+ Wed Aug 07 2024 02:43:16 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"1234"}
+ Wed Aug 07 2024 02:43:22 GMT+0530 (India Standard Time) - /api/users/resetPassword - {"newPassword":"123456"}
