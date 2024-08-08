@@ -1,7 +1,12 @@
 import { ObjectId } from "mongodb";
 import { getDB } from "../../config/mongodb.js";
 import { ApplicationError } from "../../error-handler/applicationError.js";
+import mongoose from "mongoose";
+import { productSchema } from "./product.schema.js";
+import { reviewSchema } from "./review.schema.js";
 
+const ProductModel = mongoose.model("Product", productSchema);
+const ReviewModel = mongoose.model("Review", reviewSchema);
 
 class ProductRepository{
 
@@ -103,23 +108,26 @@ class ProductRepository{
 
 async rate(userID, productID, rating){
     try{
-        const db = getDB();
-        const collection = db.collection(this.collection); 
-        
-        // 1. Removes existing entry
-        await collection.updateOne({
-                _id:new ObjectId(productID)
-        },
-        {
-            $pull:{ratings:{userID: new ObjectId(userID)}}
-        })
-        
-        // 2. Add new entry
-        await collection.updateOne({
-            _id:new ObjectId(productID)
-        },{
-            $push:{ratings:{userID:new ObjectId(userID), rating}}
-        })
+        // 1. Check if product exists
+        const productToUpdate = await ProductModel.findById(productID);
+        if(!productToUpdate){
+            throw new Error("Product not found")
+        }
+
+        // Find the existing review
+        const userReview = await ReviewModel.findOne({product: new ObjectId(productID), user: new ObjectId(userID)});
+        if(userReview){
+            userReview.rating = rating;
+            await userReview.save();
+        }else{
+            const newReview = new ReviewModel({
+                product: new ObjectId(productID),
+                user: new ObjectId(userID),
+                rating: rating
+            });
+            newReview.save();
+        }
+
     }catch(err){
         console.log(err);
         throw new ApplicationError("Something went wrong with database", 500);    
