@@ -10,10 +10,11 @@ import cartRouter from './src/features/cartItems/cartItems.routes.js';
 import apiDocs from './swagger.json' assert { type: 'json' };
 import loggerMiddleware from './src/middlewares/logger.middleware.js';
 import { ApplicationError } from './src/error-handler/applicationError.js';
-import {connectToMongoDB} from './src/config/mongodb.js';
+import { connectToMongoDB } from './src/config/mongodb.js';
 import orderRouter from './src/features/order/order.routes.js';
 import { connectUsingMongoose } from './src/config/mongooseConfig.js';
 import mongoose from 'mongoose';
+
 import likeRouter from './src/features/like/like.routes.js';
 
 // 2. Create Server
@@ -72,7 +73,7 @@ server.get('/', (req, res) => {
 // Error handler middleware
 server.use((err, req, res, next) => {
   console.log(err);
-  if(err instanceof mongoose.Error.ValidationError){
+  if (err instanceof mongoose.Error.ValidationError) {
     return res.status(400).send(err.message);
   }
   if (err instanceof ApplicationError) {
@@ -97,7 +98,7 @@ server.use((req, res) => {
 });
 
 // 5. Specify port.
-server.listen(3200, ()=>{
+server.listen(3200, () => {
   console.log('Server is running at 3200');
   // connectToMongoDB();
   connectUsingMongoose();
