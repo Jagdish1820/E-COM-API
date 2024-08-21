@@ -18,20 +18,55 @@ export default class ProductController {
    
   }
 
+  // async addProduct(req, res) {
+  //   try{
+  //     console.log(req.body);
+  //   const { name, price, sizes, categories } = req.body;
+  //   const newProduct = new ProductModel(name,null, parseFloat(price),
+  //   req.file.filename,null, sizes.split(',')
+  //   );
+  //   const createdProduct = await this.productRepository.add(newProduct);
+  //   res.status(201).send(createdProduct);
+  // }catch(err){
+  //   console.log(err);
+  //   return res.status(200).send("Something went wrong");
+  // }
+  // }
   async addProduct(req, res) {
-    try{
-      console.log(req.body);
-    const { name, price, sizes, categories } = req.body;
-    const newProduct = new ProductModel(name,null, parseFloat(price),
-    req.file.filename,categories, sizes.split(',')
-    );
-    const createdProduct = await this.productRepository.add(newProduct);
-    res.status(201).send(createdProduct);
-  }catch(err){
-    console.log(err);
-    return res.status(200).send("Something went wrong");
-  }
-  }
+    try {
+        console.log(req.body);
+        const { name, price, sizes, categories } = req.body;
+
+        // Handle undefined sizes - set a default empty array if undefined
+        const sizeArray = sizes ? sizes.split(',') : [];
+
+        // Parse price and handle any potential issues
+        const parsedPrice = parseFloat(price);
+        if (isNaN(parsedPrice)) {
+            return res.status(400).send("Invalid price value");
+        }
+
+        // Get the uploaded file's path (Multer typically saves the file and provides the path)
+        const imageUrl = req.file ? req.file.path : null;
+
+        // Prepare product data
+        const newProductData = {
+            name,
+            price: parsedPrice, // Ensure price is a valid number
+            sizes: sizeArray,
+            categories, // Pass the categories array directly
+            imageUrl    // Add the image URL here
+        };
+
+        const createdProduct = await this.productRepository.add(newProductData);
+        res.status(201).send(createdProduct);
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send("Something went wrong");
+    }
+}
+
+
 
   async rateProduct(req, res, next) {    
     try{

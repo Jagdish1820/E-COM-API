@@ -408,3 +408,69 @@
  Sun Aug 11 2024 06:18:17 GMT+0530 (India Standard Time) - /api/products - {"name":"Amazon Kindle","price":15000,"description":"E-book reader by Amazon","categories":"66b4fd3afb70aaa3372602df, 66b4fd3afb70aaa3372602dd"}
  Sun Aug 11 2024 06:18:52 GMT+0530 (India Standard Time) - /api/products - {"name":"Amazon Kindle","price":15000,"description":"E-book reader by Amazon","categories":"66b4fd3afb70aaa3372602df, 66b4fd3afb70aaa3372602dd"}
  Sun Aug 11 2024 06:20:07 GMT+0530 (India Standard Time) - /api/products - {"name":"Amazon Kindle","price":15000,"description":"E-book reader by Amazon","categories":"66b4fd3afb70aaa3372602df, 66b4fd3afb70aaa3372602dd"}
+ Mon Aug 12 2024 19:38:15 GMT+0530 (India Standard Time) - /api/products - {"name":"Amazon Kindle","price":15000,"description":"E-book reader by Amazon","categories":"66b4fd3afb70aaa3372602df, 66b4fd3afb70aaa3372602dd"}
+ Mon Aug 12 2024 19:57:34 GMT+0530 (India Standard Time) - /api/products - {"name":"Amazon Kindle","price":15000,"description":"E-book reader by Amazon","categories":"66b4fd3afb70aaa3372602df, 66b4fd3afb70aaa3372602dd"}
+ Mon Aug 12 2024 20:06:20 GMT+0530 (India Standard Time) - /api/products - {"name":"Amazon Kindle","price":15000,"description":"E-book reader by Amazon","categories":"66b4fd3afb70aaa3372602df, 66b4fd3afb70aaa3372602dd"}
+ Mon Aug 12 2024 20:12:43 GMT+0530 (India Standard Time) - /api/products - {"id":1,"name":"Product 1","description":"Description for Product 10","price":19.99,"imageUrl":"https://m.media-amazon.com/images/I/51-nXsSRfZL._SX328_BO1,204,203,200_.jpg","category":"Category1"}
+ Mon Aug 12 2024 20:14:30 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","price":"19.99","sizes":"S,M,L","categories":"Category1"}
+ Mon Aug 12 2024 20:17:47 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","price":"19.99","sizes":"S,M,L","categories":"Category1"}
+ Mon Aug 12 2024 20:25:50 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:26:19 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:26:43 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:27:31 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:28:25 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:29:05 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:29:46 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:32:52 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:33:33 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:35:04 GMT+0530 (India Standard Time) - /api/products - {"id":1,"name":"Product 1","desc":"Description for Product 1","price":19.99,"imageUrl":"https://example.com/path/to/image.jpg","category":"Category1","sizes":["S","M","L"]}
+ Mon Aug 12 2024 20:37:39 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","desc":"Description for Product 1","price":19.99,"imageUrl":"https://example.com/path/to/image.jpg","category":"Category1","sizes":["S","M","L"]}
+ Mon Aug 12 2024 20:37:42 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","desc":"Description for Product 1","price":19.99,"imageUrl":"https://example.com/path/to/image.jpg","category":"Category1","sizes":["S","M","L"]}
+ Mon Aug 12 2024 20:38:02 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","desc":"Description for Product 1","price":19.99,"imageUrl":"https://example.com/path/to/image.jpg","category":"Category1","sizes":["S","M","L"]}
+ Mon Aug 12 2024 20:38:38 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","desc":"Description for Product 1","price":19.99,"imageUrl":"https://example.com/path/to/image.jpg","category":"Category1","sizes":["S","M","L"]}
+ Mon Aug 12 2024 20:39:14 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","desc":"Description for Product 1","price":19.99,"imageUrl":"https://example.com/path/to/image.jpg","category":"Category1","sizes":["S"]}
+ Mon Aug 12 2024 20:39:20 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","desc":"Description for Product 1","price":19.99,"imageUrl":"https://example.com/path/to/image.jpg","category":"Category1","sizes":"S"}
+ Mon Aug 12 2024 20:39:58 GMT+0530 (India Standard Time) - /api/products - {"name":"Product 1","desc":"Description for Product 1","price":19.99,"imageUrl":"https://example.com/path/to/image.jpg","category":"Category1","sizes":"S"}
+ Mon Aug 12 2024 20:42:11 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:42:48 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:43:22 GMT+0530 (India Standard Time) - /api/products - {}
+ Mon Aug 12 2024 20:46:57 GMT+0530 (India Standard Time) - /api/products - {"name":"Amazon Kindle","price":15000,"description":"E-book reader by Amazon","categories":"66b4fd3afb70aaa3372602df, 66b4fd3afb70aaa3372602dd"}
+ Mon Aug 12 2024 20:50:17 GMT+0530 (India Standard Time) - /api/products - {"name":"Amazon Kindle","price":15000,"description":"E-book reader by Amazon","categories":"66b4fd3afb70aaa3372602df, 66b4fd3afb70aaa3372602dd"}
+ Wed Aug 14 2024 12:03:42 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 14 2024 12:06:41 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 14 2024 12:08:47 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 14 2024 12:10:28 GMT+0530 (India Standard Time) - /api/products - {"name":"Product1","desc":null,"imageUrl":"Screenshot 2024-05-02 115712.png","category":"Cat1","price":20000,"sizes":["L"," XL"," M"],"ratings":[{"userID":{"$oid":"66a91a8624a599c4e245f711"},"rating":3.7}],"stock":20}
+ Wed Aug 14 2024 12:20:30 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 19:19:04 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 19:22:07 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 19:24:34 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 19:52:31 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:02:25 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:06:36 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:07:40 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:09:56 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:11:13 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:11:27 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:15:45 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:16:04 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:18:45 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:30:21 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:41:25 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:43:51 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:46:58 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:48:22 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 20:53:21 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:37:17 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:37:44 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:39:33 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:41:41 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:47:38 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:54:13 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:56:20 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:57:29 GMT+0530 (India Standard Time) - /api/products - {}
+ Wed Aug 21 2024 22:59:59 GMT+0530 (India Standard Time) - /api/products/filter?categories=[%27Cat1%27,%20%27Cat2%27]&minPrice=10000 - {}
+ Wed Aug 21 2024 23:00:33 GMT+0530 (India Standard Time) - /api/products/filter?categories=[%27Cat1%27,%20%27Cat2%27]&minPrice=10000 - {}
+ Wed Aug 21 2024 23:01:01 GMT+0530 (India Standard Time) - /api/cartitems - {"productID":"66ab19a05ec63bed5d504406","quantity":2}
+ Wed Aug 21 2024 23:01:01 GMT+0530 (India Standard Time) - / - {"productID":"66ab19a05ec63bed5d504406","quantity":2}
+ Wed Aug 21 2024 23:01:11 GMT+0530 (India Standard Time) - /api/cartitems - {"productID":"66ab19a05ec63bed5d504406","quantity":2}
+ Wed Aug 21 2024 23:01:11 GMT+0530 (India Standard Time) - / - {"productID":"66ab19a05ec63bed5d504406","quantity":2}

@@ -16,24 +16,50 @@ class ProductRepository{
         this.collection = "products";
     }
 
-    async add(productData){
-        try{
-            // 1. Adding Product
-            productData.categories=productData.category.split(',');
-            console.log(productData);
+    // async add(productData){
+    //     try{
+    //         // 1. Adding Product
+    //         productData.categories=productData.category.split(',');
+    //         console.log(productData);
+    //         const newProduct = new ProductModel(productData);
+    //         const savedProduct = await newProduct.save();
+
+    //         // 2. Update categories.
+    //         await CategoryModel.updateMany(
+    //             {_id: {$in: productData.categories}},
+    //             {$push: {products: new ObjectId(savedProduct._id)}}
+    //         )
+    //     }catch(err){
+    //         console.log(err);
+    //         throw new ApplicationError("Something went wrong with database", 500);    
+    //     }
+    // }
+
+    async add(productData) {
+        try {
+            // Convert category names to ObjectId
+            const categoryDocs = await CategoryModel.find({ name: { $in: productData.categories } }).select('_id');
+            const categoryIds = categoryDocs.map(cat => cat._id);
+    
+            // Prepare product data with ObjectId references
+            productData.categories = categoryIds;
+    
             const newProduct = new ProductModel(productData);
             const savedProduct = await newProduct.save();
-
-            // 2. Update categories.
+    
+            // Update categories with the new product ID
             await CategoryModel.updateMany(
-                {_id: {$in: productData.categories}},
-                {$push: {products: new ObjectId(savedProduct._id)}}
-            )
-        }catch(err){
+                { _id: { $in: categoryIds } },
+                { $push: { products: savedProduct._id } }
+            );
+    
+            return savedProduct;
+        } catch (err) {
             console.log(err);
             throw new ApplicationError("Something went wrong with database", 500);    
         }
     }
+    
 
     async getAll(){
         try{
