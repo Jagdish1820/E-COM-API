@@ -42,17 +42,40 @@ export default class CartItemsRepository{
         }
     }
 
-    async delete(userID, cartItemID){
-        try{
-            const db = getDB();
-            const collection = db.collection(this.collection)
-            const result = await collection.deleteOne({_id: new ObjectId(cartItemID), userID: new ObjectId(userID)});
-            return result.deletedCount>0;
-        }catch(err){
-            console.log(err);
-            throw new ApplicationError("Something went wrong with database", 500);    
+    // async delete(userID, cartItemID){
+    //     try{
+    //         const db = getDB();
+    //         const collection = db.collection(this.collection)
+    //         const result = await collection.deleteOne({_id: new ObjectId(cartItemID), userID: new ObjectId(userID)});
+    //         return result.deletedCount>0;
+    //     }catch(err){
+    //         console.log(err);
+    //         throw new ApplicationError("Something went wrong with database", 500);    
+    //     }
+    // }
+
+
+    async delete(userID, cartItemID) {
+        try {
+          const db = getDB();
+          const collection = db.collection('cartItems');
+    
+          // Ensure cartItemID is treated as a number
+          const result = await collection.deleteOne({
+            _id: parseInt(cartItemID, 10),  // Parse the ID as an integer
+            userID: new ObjectId(userID)    // Ensure userID is an ObjectId
+          });
+    
+          if (result.deletedCount === 0) {
+            return false;  // No item was deleted, meaning it was not found
+          }
+    
+          return true;
+        } catch (err) {
+          console.log("Error deleting cart item:", err);  // Logging
+          throw new ApplicationError("Something went wrong with the database", 500);
         }
-    }
+      }
 
     async getNextCounter(db){
 

@@ -1,4 +1,3 @@
-// 1. Import Exprerss
 import express from 'express';
 import swagger from 'swagger-ui-express';
 import dotenv from "dotenv";
@@ -39,9 +38,6 @@ server.use((req, res, next) => {
 });
 
 server.use(express.json());
-// Bearer <token>
-// for all requests related to product, redirect to product routes.
-// localhost:3200/api/products
 server.use(
   '/api-docs',
   swagger.serve,
@@ -50,22 +46,11 @@ server.use(
 
 server.use(loggerMiddleware);
 server.use('/api/orders', jwtAuth, orderRouter);
-
-server.use(
-  '/api/products',
-  jwtAuth,
-  productRouter
-);
-server.use(
-  '/api/cartItems',
-  loggerMiddleware,
-  jwtAuth,
-  cartRouter
-);
+server.use('/api/products', jwtAuth, productRouter);
+server.use('/api/cartItems', loggerMiddleware, jwtAuth, cartRouter);
 server.use('/api/users', userRouter);
-server.use('/api/likes', jwtAuth, likeRouter)
+server.use('/api/likes', jwtAuth, likeRouter);
 
-// 3. Default request handler
 server.get('/', (req, res) => {
   res.send('Welcome to Ecommerce APIs');
 });
@@ -80,27 +65,25 @@ server.use((err, req, res, next) => {
     return res.status(err.code).send(err.message);
   }
 
-  // server errors.
-  res
-    .status(500)
-    .send(
-      'Something went wrong, please try later'
-    );
+  res.status(500).send('Something went wrong, please try later');
 });
 
 // 4. Middleware to handle 404 requests.
 server.use((req, res) => {
-  res
-    .status(404)
-    .send(
-      'API not found. Please check our documentation for more information at localhost:3200/api-docs'
-    );
+  res.status(404).send(
+    'API not found. Please check our documentation for more information at localhost:3200/api-docs'
+  );
 });
 
-// 5. Specify port.
-server.listen(3200, () => {
-  console.log('Server is running at 3200');
-  // connectToMongoDB();
-  connectUsingMongoose();
-});
-
+// 5. Connect to MongoDB and then start the server.
+(async () => {
+  try {
+    await connectToMongoDB(); // Ensure MongoDB is connected
+    connectUsingMongoose(); // Connect using Mongoose if needed
+    server.listen(3200, () => {
+      console.log('Server is running at 3200');
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error);
+  }
+})();

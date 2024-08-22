@@ -3,19 +3,19 @@ import ProductRepository from './product.repository.js';
 
 export default class ProductController {
 
-  constructor(){
+  constructor() {
     this.productRepository = new ProductRepository();
   }
 
   async getAllProducts(req, res) {
-    try{
+    try {
       const products = await this.productRepository.getAll();
       res.status(200).send(products);
-    }catch(err){
-    console.log(err);
-    return res.status(200).send("Something went wrong");
-  }
-   
+    } catch (err) {
+      console.log(err);
+      return res.status(200).send("Something went wrong");
+    }
+
   }
 
   // async addProduct(req, res) {
@@ -32,101 +32,154 @@ export default class ProductController {
   //   return res.status(200).send("Something went wrong");
   // }
   // }
+
+  //   async addProduct(req, res) {
+  //     try {
+  //         console.log(req.body);
+  //         const { name, price, sizes, categories } = req.body;
+
+  //         // Handle undefined sizes - set a default empty array if undefined
+  //         const sizeArray = sizes ? sizes.split(',') : [];
+
+  //         // Parse price and handle any potential issues
+  //         const parsedPrice = parseFloat(price);
+  //         if (isNaN(parsedPrice)) {
+  //             return res.status(400).send("Invalid price value");
+  //         }
+
+  //         // Get the uploaded file's path (Multer typically saves the file and provides the path)
+  //         const imageUrl = req.file ? req.file.path : null;
+
+  //         // Prepare product data
+  //         const newProductData = {
+  //             name,
+  //             price: parsedPrice, // Ensure price is a valid number
+  //             sizes: sizeArray,
+  //             categories, // Pass the categories array directly
+  //             imageUrl    // Add the image URL here
+  //         };
+
+  //         const createdProduct = await this.productRepository.add(newProductData);
+  //         res.status(201).send(createdProduct);
+  //     } catch (err) {
+  //         console.log(err);
+  //         return res.status(500).send("Something went wrong");
+  //     }
+  // }
+
+
+
   async addProduct(req, res) {
     try {
-        console.log(req.body);
-        const { name, price, sizes, categories } = req.body;
+      const { name, price, sizes, categories } = req.body;
 
-        // Handle undefined sizes - set a default empty array if undefined
-        const sizeArray = sizes ? sizes.split(',') : [];
+      // Remove any unintended quotes from the name
+      const cleanedName = name.replace(/^"|"$/g, '');
 
-        // Parse price and handle any potential issues
-        const parsedPrice = parseFloat(price);
-        if (isNaN(parsedPrice)) {
-            return res.status(400).send("Invalid price value");
-        }
+      // Handle undefined sizes - set a default empty array if undefined
+      const sizeArray = sizes ? sizes.split(',') : [];
 
-        // Get the uploaded file's path (Multer typically saves the file and provides the path)
-        const imageUrl = req.file ? req.file.path : null;
+      // Parse price and handle any potential issues
+      const parsedPrice = parseFloat(price);
+      if (isNaN(parsedPrice)) {
+        return res.status(400).send("Invalid price value");
+      }
 
-        // Prepare product data
-        const newProductData = {
-            name,
-            price: parsedPrice, // Ensure price is a valid number
-            sizes: sizeArray,
-            categories, // Pass the categories array directly
-            imageUrl    // Add the image URL here
-        };
+      // Get the uploaded file's path (Multer typically saves the file and provides the path)
+      const imageUrl = req.file ? req.file.path : null;
 
-        const createdProduct = await this.productRepository.add(newProductData);
-        res.status(201).send(createdProduct);
+      // Prepare product data
+      const newProductData = {
+        name: cleanedName,
+        price: parsedPrice, // Ensure price is a valid number
+        sizes: sizeArray,
+        categories, // Pass the categories array directly
+        imageUrl    // Add the image URL here
+      };
+
+      const createdProduct = await this.productRepository.add(newProductData);
+      res.status(201).send(createdProduct);
     } catch (err) {
-        console.log(err);
-        return res.status(500).send("Something went wrong");
+      console.log(err);
+      return res.status(500).send("Something went wrong");
     }
-}
+  }
 
 
 
-  async rateProduct(req, res, next) {    
-    try{
-    const userID = req.userID;
-    const productID = req.body.productID;
-    const rating = req.body.rating;
-    await this.productRepository.rate(
-      userID,
-      productID,
-      rating
-    );
-    return res
-      .status(200)
-      .send('Rating has been added');
-  
-    }catch(err){
+
+  async rateProduct(req, res, next) {
+    try {
+      const userID = req.userID;
+      const productID = req.body.productID;
+      const rating = req.body.rating;
+      await this.productRepository.rate(
+        userID,
+        productID,
+        rating
+      );
+      return res
+        .status(200)
+        .send('Rating has been added');
+
+    } catch (err) {
       console.log(err);
       console.log("Passing error to middleware");
       next(err);
     }
-    }
+  }
+
+  // async getOneProduct(req, res) {
+  //   try {
+  //     const id = req.params.id;
+  //     const product = await this.productRepository.get(id);
+  //     if (!product) {
+  //       res.status(404).send('Product not found');
+  //     } else {
+  //       return res.status(200).send(product);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     return res.status(200).send("Something went wrong");
+  //   }
+  // }
+
 
   async getOneProduct(req, res) {
-    try{
+    try {
       const id = req.params.id;
       const product = await this.productRepository.get(id);
-      if (!product) {
-        res.status(404).send('Product not found');
-      } else {
-        return res.status(200).send(product);
-      }
-    }catch(err){
-    console.log(err);
-    return res.status(200).send("Something went wrong");
+      return res.status(200).send(product);
+    } catch (err) {
+      console.log(err);
+      return res.status(err.code || 500).send(err.message || "Something went wrong");
+    }
   }
-}
+
 
   async filterProducts(req, res) {
-    try{  
-    const minPrice = req.query.minPrice;
-    const maxPrice = req.query.maxPrice;
-    const categories = req.query.categories;
-    const result = await this.productRepository.filter(
-      minPrice,
-      categories
-    );
-    res.status(200).send(result);
-  }catch(err){
-    console.log(err);
-    return res.status(200).send("Something went wrong");
-  }
+    try {
+      const minPrice = req.query.minPrice;
+      const maxPrice = req.query.maxPrice;
+      const categories = req.query.categories;
+      const result = await this.productRepository.filter(
+        minPrice,
+        categories
+      );
+      res.status(200).send(result);
+    } catch (err) {
+      console.log(err);
+      return res.status(200).send("Something went wrong");
+    }
   }
 
-  async averagePrice(req, res, next){
-    try{
-      const result =await this.productRepository.averageProductPricePerCategory();
+  async averagePrice(req, res, next) {
+    try {
+      const result = await this.productRepository.averageProductPricePerCategory();
       res.status(200).send(result);
-    }catch(err){
-    console.log(err);
-    return res.status(200).send("Something went wrong");
-  }
+    } catch (err) {
+      console.log(err);
+      return res.status(200).send("Something went wrong");
+    }
   }
 }
