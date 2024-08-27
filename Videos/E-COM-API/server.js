@@ -15,6 +15,7 @@ import { connectUsingMongoose } from './src/config/mongooseConfig.js';
 import mongoose from 'mongoose';
 
 import likeRouter from './src/features/like/like.routes.js';
+import wishlistRouter from './src/features/wishlist/wishlist.routes.js';
 
 // 2. Create Server
 const server = express();
@@ -44,12 +45,15 @@ server.use(
   swagger.setup(apiDocs)
 );
 
+
 server.use(loggerMiddleware);
 server.use('/api/orders', jwtAuth, orderRouter);
 server.use('/api/products', jwtAuth, productRouter);
 server.use('/api/cartItems', loggerMiddleware, jwtAuth, cartRouter);
 server.use('/api/users', userRouter);
 server.use('/api/likes', jwtAuth, likeRouter);
+server.use('/api/wishlist', jwtAuth, wishlistRouter);
+
 
 server.get('/', (req, res) => {
   res.send('Welcome to Ecommerce APIs');
