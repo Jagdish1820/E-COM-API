@@ -736,3 +736,30 @@
  Wed Aug 28 2024 02:45:44 GMT+0530 (India Standard Time) - / - {"type":"Product","id":"66ab19ad5ec63bed5d504407"}
  Wed Aug 28 2024 02:47:19 GMT+0530 (India Standard Time) - /api/orders - {}
  Wed Aug 28 2024 02:47:44 GMT+0530 (India Standard Time) - /api/orders/history - {}
+ Wed Aug 28 2024 03:04:59 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:05:11 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:11:26 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:15:11 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:15:51 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:34:13 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:38:26 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66c628c322021ff254f59b34","role":"Admin"}
+ Wed Aug 28 2024 03:41:23 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cddfca61526f4dd02d68f0","role":"Admin"}
+ Wed Aug 28 2024 03:45:52 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:46:27 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:49:05 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:50:16 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:53:01 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Customer"}
+ Wed Aug 28 2024 03:53:48 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66cde04061526f4dd02d68f2","role":"Admin"}
+ Wed Aug 28 2024 03:54:06 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66c628c322021ff254f59b34","role":"Customer"}
+ Wed Aug 28 2024 03:54:56 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"jkhudda20@gmail.com","password":"password123"}
+ Wed Aug 28 2024 03:56:00 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"jkhudda20@gmail.com","password":"password123","role":"Customer"}
+ Wed Aug 28 2024 03:58:22 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish","email":"jkhudda200@gmail.com","password":"password123","type":"Seller"}
+ Wed Aug 28 2024 03:59:04 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish","email":"jkhudda200@gmail.com","password":"password123"}
+ Wed Aug 28 2024 03:59:24 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish","email":"jkhudda200@gmail.com","password":"password123"}
+ Wed Aug 28 2024 04:00:07 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish","email":"jkhudda2000@gmail.com","password":"password123"}
+ Wed Aug 28 2024 04:02:07 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"JagJohn Doe","email":"johndoe@gmail.com","password":"password123"}
+ Wed Aug 28 2024 04:02:20 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"John Doe","email":"johndoe@gmail.com","password":"password123"}
+ Wed Aug 28 2024 04:02:29 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"John Doe","email":"johndoe123@gmail.com","password":"password123"}
+ Wed Aug 28 2024 04:03:14 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish","email":"jagdish1234@gmail.com","password":"password123","role":"Admin"}
+ Wed Aug 28 2024 04:04:22 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66c628c322021ff254f59b34","role":"Admin"}
+ Wed Aug 28 2024 04:04:47 GMT+0530 (India Standard Time) - /api/users/assignRole - {"userId":"66ce53fd05af64559b6179a9","role":"Admin"}
