@@ -774,3 +774,13 @@
  Sun Sep 01 2024 13:21:48 GMT+0530 (India Standard Time) - /api/products/search?search&minPrice=50000&maxPrice=1500000&categories=Electronics,Computers&sizes=M,L - {}
  Sun Sep 01 2024 13:21:59 GMT+0530 (India Standard Time) - /api/products/search?minPrice=50000&maxPrice=1500000&categories=Electronics,Computers&sizes=M,L - {}
  Sun Sep 01 2024 13:22:14 GMT+0530 (India Standard Time) - /api/products/search?minPrice=50000&maxPrice=1500000&categories=Electronics,Books&sizes=M,L - {}
+ Sun Sep 01 2024 16:26:39 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"hjagdishhudda@gmail.com","password":"password123","role":"Admin"}
+ Sun Sep 01 2024 16:28:37 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"hjagdishhudda@gmail.com","password":"password123","role":"Admin"}
+ Sun Sep 01 2024 16:29:23 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"abcsa7513@gmail.com","password":"password123","role":"Admin"}
+ Sun Sep 01 2024 16:30:32 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"abcsa7513@gmail.com","password":"password123","role":"Admin"}
+ Sun Sep 01 2024 16:31:00 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"2021ucp1385@gmail.com","password":"password123","role":"Admin"}
+ Sun Sep 01 2024 16:34:09 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"2021ucp1385@gmail.com","password":"password123"}
+ Sun Sep 01 2024 16:40:50 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"2021ucp1385@gmail.com","password":"password123"}
+ Sun Sep 01 2024 16:41:39 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"2021ucp1385@gmail.com","password":"password123"}
+ Sun Sep 01 2024 16:45:55 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"2021ucp1385@gmail.com","password":"password123"}
+ Sun Sep 01 2024 16:46:23 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"Jagdish Hudda","email":"2021ucp1385@gmail.com","password":"password123"}

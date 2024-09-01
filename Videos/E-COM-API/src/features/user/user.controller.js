@@ -2,6 +2,7 @@ import UserModel from './user.model.js';
 import jwt from 'jsonwebtoken';
 import UserRepository from './user.repository.js';
 import bcrypt from 'bcrypt';
+import { sendEmail } from '../../services/emailService.js';  // Import the email service
 
 export default class UserController {
 
@@ -28,6 +29,10 @@ export default class UserController {
       const hashedPassword = await bcrypt.hash(password, 12);
       const user = new UserModel(name, email, hashedPassword, role);
       await this.userRepository.signUp(user);
+
+      // Send welcome email
+      await sendEmail(user.email, 'Welcome to E-Commerce App', 'Thank you for signing up!');
+
       res.status(201).send(user);
     }catch(err){
       next(err);
