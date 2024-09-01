@@ -86,25 +86,72 @@ class ProductRepository {
         }
     }
 
-    async filter(minPrice, categories) {
+    // async filter(minPrice, categories) {
+    //     try {
+    //         let filterExpression = {};
+    
+    //         if (minPrice) {
+    //             filterExpression.price = { $gte: parseFloat(minPrice) };
+    //         }
+    
+    //         if (categories) {
+    //             categories = JSON.parse(categories.replace(/'/g, '"'));
+    
+    //             // Convert category names to ObjectId
+    //             const categoryDocs = await CategoryModel.find({ name: { $in: categories } }).select('_id');
+    //             const categoryIds = categoryDocs.map(cat => cat._id);
+    
+    //             filterExpression.categories = { $in: categoryIds };
+    //         }
+    
+    //         return await ProductModel.find(filterExpression)
+    //             .select('name price imageUrl sizes inStock')
+    //             .populate({
+    //                 path: 'categories',
+    //                 select: 'name -_id'
+    //             })
+    //             .populate({
+    //                 path: 'reviews',
+    //                 select: 'rating comment -_id',
+    //                 options: { limit: 10 }
+    //             });
+    //     } catch (err) {
+    //         console.log(err);
+    //         throw new ApplicationError("Something went wrong with database", 500);
+    //     }
+    // }
+
+    async searchAndFilterProducts({ search, minPrice, maxPrice, categories, sizes }) {
         try {
-            let filterExpression = {};
-    
-            if (minPrice) {
-                filterExpression.price = { $gte: parseFloat(minPrice) };
+            const query = {};
+
+            // Search by name
+            if (search) {
+                query.name = { $regex: search, $options: 'i' };
             }
-    
+
+            // Filter by price range
+            if (minPrice !== undefined && maxPrice !== undefined) {
+                query.price = { $gte: minPrice, $lte: maxPrice };
+            } else if (minPrice !== undefined) {
+                query.price = { $gte: minPrice };
+            } else if (maxPrice !== undefined) {
+                query.price = { $lte: maxPrice };
+            }
+
+            // Filter by categories
             if (categories) {
-                categories = JSON.parse(categories.replace(/'/g, '"'));
-    
-                // Convert category names to ObjectId
                 const categoryDocs = await CategoryModel.find({ name: { $in: categories } }).select('_id');
                 const categoryIds = categoryDocs.map(cat => cat._id);
-    
-                filterExpression.categories = { $in: categoryIds };
+                query.categories = { $in: categoryIds };
             }
-    
-            return await ProductModel.find(filterExpression)
+
+            // Filter by sizes
+            if (sizes) {
+                query.sizes = { $in: sizes };
+            }
+
+            return await ProductModel.find(query)
                 .select('name price imageUrl sizes inStock')
                 .populate({
                     path: 'categories',
@@ -116,8 +163,8 @@ class ProductRepository {
                     options: { limit: 10 }
                 });
         } catch (err) {
-            console.log(err);
-            throw new ApplicationError("Something went wrong with database", 500);
+            console.log("Error searching and filtering products:", err);
+            throw new ApplicationError("Failed to search and filter products", 500);
         }
     }
     

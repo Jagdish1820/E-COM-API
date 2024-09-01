@@ -59,14 +59,22 @@ export default class ProductController {
     }
   }
 
-  async filterProducts(req, res) {
+  async searchAndFilterProducts(req, res) {
     try {
-      const minPrice = req.query.minPrice;
-      const categories = req.query.categories;
-      const result = await this.productRepository.filter(minPrice, categories);
-      res.status(200).send(result);
+      const { search, minPrice, maxPrice, categories, sizes } = req.query;
+
+      const filters = {
+        search,
+        minPrice: minPrice ? parseFloat(minPrice) : undefined,
+        maxPrice: maxPrice ? parseFloat(maxPrice) : undefined,
+        categories: categories ? categories.split(',') : undefined,
+        sizes: sizes ? sizes.split(',') : undefined,
+      };
+
+      const products = await this.productRepository.searchAndFilterProducts(filters);
+      return res.status(200).json(products);
     } catch (err) {
-      console.log(err);
+      console.log("Error searching and filtering products:", err);
       return res.status(500).send("Something went wrong");
     }
   }
